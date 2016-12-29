@@ -28,8 +28,6 @@ post '/gateway' do
     # output character name
     # check allegiances: if none, say "I pledge allegiance to no house."
     # if allegiance, "I pledge allegiance to [house]."
-    # check nicknames: if none, don't say anything
-    # if nicknames: "My friends call me [list nicknames separated by commas]"
 
       number = rand(1..2138)
 
@@ -47,30 +45,7 @@ post '/gateway' do
         allegiance = house_resp['name']
       end
 
-      # Find aliases
-      # if !resp['aliases'].empty?
-
-
-
-      respond_message "My name is #{name}, and I pledge allegiance to #{allegiance}."
-
-
-
-
-
-
-
-
-
-    # when 'charbynum'
-    #   resp = get_resp("#{got_url}characters/#{repo}")
-    #   respond_message "#{resp['name']}"
-    # when 'house'
-    #   resp = get_resp("#{got_url}houses/#{repo}")
-    #   names = resp['swornMembers'].collect do |char|
-    #     get_resp("#{char}")['name']
-    #   end.join("\n")
-    #   respond_message "There are #{resp['swornMembers'].count} characters in #{resp['name']}. Their names are as follows:\n#{names}"
+      respond_message "Your name is #{name}, and you pledge allegiance to #{allegiance}."
 
     end
 
