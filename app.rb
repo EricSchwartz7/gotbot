@@ -12,15 +12,13 @@ def get_resp(url)
   JSON.parse resp.body
 end
 
-## Receive post at '/gateway' and send to url
+# Receive post at '/gateway'
 post '/gateway' do
   message = params[:text]
 
   url = "http://www.anapioficeandfire.com/api/"
-  # action, repo = message.split(' ').map {|c| c.strip.downcase }
 
   case message
-
     when 'fire'
       respond_message ":fire:" * 100
     when 'winter is coming'
@@ -51,7 +49,8 @@ post '/gateway' do
 
   end
 
-def respond_message message
+# Convert bot output to JSON which can be read by Slack
+def respond_message(message)
   content_type :json
   {:text => message}.to_json
 end
