@@ -20,7 +20,7 @@ post '/gateway' do
 
   case message
     when 'dracarys'
-      fire = ":fire:" * 25 + ":dragon_face:\n"
+      fire_dragon = ":fire:" * 25 + ":dragon_face:\n"
       respond_message(fire_dragon * 3)
     when 'valar morghulis'
       respond_message 'https://s-media-cache-ak0.pinimg.com/736x/6d/88/bc/6d88bcebfd0b4b4e3ed58bf020248285.jpg'
